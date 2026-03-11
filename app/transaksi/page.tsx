@@ -5,7 +5,7 @@ import Header from '@/components/header'
 import {
   PageHeader, SearchBar, AlertBanner, Btn,
   PillFilter, SkeletonList, EmptyState,
-  IOSToggle, ConfirmDialog, BottomSheet, SelectField,
+  IOSToggle, BottomSheet, SelectField,
 } from '@/components/ios-ui'
 
 // ─── Types ────────────────────────────────────────────────────────────────────

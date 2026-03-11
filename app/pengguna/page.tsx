@@ -47,7 +47,7 @@ export default function PenggunaPage() {
       raw.forEach(t => {
         const d = new Date(t.tanggal).toISOString().split('T')[0]
         if (!map[t.wargaId]) {
-          map[t.wargaId] = { wargaId: t.wargaId, nama: t.warga?.nama ?? \'-\', totalTrx: 0, lunas: 0, tunggak: 0, totalBayar: 0, persentase: 0, dots: [] }
+          map[t.wargaId] = { wargaId: t.wargaId, nama: t.warga?.nama ?? '-', totalTrx: 0, lunas: 0, tunggak: 0, totalBayar: 0, persentase: 0, dots: [] }
         }
         const entry = map[t.wargaId]
         entry.totalTrx++

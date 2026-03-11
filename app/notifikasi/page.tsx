@@ -55,7 +55,7 @@ export default function NotifikasiPage() {
         generated.push({
           id:    `tunggak-${latest.wargaId}`,
           type:  'tunggak',
-          title: `Tunggakan – ${latest.warga?.nama ?? \'-\'}`,
+          title: `Tunggakan – ${latest.warga?.nama ?? '-'}`,
           body:  `${tunggak.length} transaksi belum lunas, total ${fmtCurrency(total)}`,
           time:  fmtDate(latest.tanggal),
           read:  false,
@@ -72,7 +72,7 @@ export default function NotifikasiPage() {
         generated.push({
           id:    `lunas-${t.id}`,
           type:  'lunas',
-          title: `Lunas – ${t.warga?.nama ?? \'-\'}`,
+          title: `Lunas – ${t.warga?.nama ?? '-'}`,
           body:  `Pembayaran pada ${fmtDate(t.tanggal)} telah dikonfirmasi lunas`,
           time:  fmtDate(t.tanggal),
           read:  true, // lunas notifs already "read"

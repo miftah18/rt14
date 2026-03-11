@@ -24,7 +24,6 @@ const timeNow  = () => new Date().toLocaleTimeString('id-ID', { hour: '2-digit',
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function QRCodePage() {
   const [warga, setWarga]           = useState<Warga[]>([])
-  const [loadingWarga, setLoadingWarga] = useState(true)
   const [formOpen, setFormOpen]     = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [alert, setAlert]           = useState<{ type: 'success' | 'error'; message: string } | null>(null)
@@ -50,7 +49,7 @@ export default function QRCodePage() {
     } catch {
       setAlert({ type: 'error', message: 'Gagal memuat data warga' })
     } finally {
-      setLoadingWarga(false)
+      // setLoadingWarga(false)
     }
   }, [])
 

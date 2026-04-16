@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/drizzle'
 import { members } from '@/db/schema'
-import { eq, desc, inArray } from 'drizzle-orm'
+import { eq, desc } from 'drizzle-orm'
 import { getSessionFromCookie, getOrganizationWithDescendants } from '@/lib/auth'
 
 export async function GET(request: NextRequest) {

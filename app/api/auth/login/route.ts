@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { findUserByUsername, verifyPassword, setSessionCookie, SessionUser } from '@/lib/auth'
+import { findUserByUsername, verifyPassword, SessionUser } from '@/lib/auth'
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
       username: user.username,
       name: user.name,
       organizationId: user.organizationId,
-      role: user.role as any,
+      role: user.role as 'superadmin' | 'admin' | 'viewer',
     }
 
     // Set session cookie and create response

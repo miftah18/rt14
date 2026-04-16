@@ -4,9 +4,17 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
+interface User {
+  id: number
+  username: string
+  name: string
+  organizationId: number
+  role: 'superadmin' | 'admin' | 'viewer'
+}
+
 export default function HomePage() {
   const router = useRouter()
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

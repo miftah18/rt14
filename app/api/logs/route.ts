@@ -4,7 +4,7 @@ import { logs } from '@/db/schema'
 import { desc } from 'drizzle-orm'
 import { getSessionFromCookie, getOrganizationWithDescendants } from '@/lib/auth'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const session = await getSessionFromCookie()
     if (!session) {

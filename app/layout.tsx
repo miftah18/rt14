@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
-import { ClerkProvider } from '@clerk/nextjs'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -11,12 +10,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'RT 14 Sidorejo – Enterprise',
-  description: 'Aplikasi Manajemen Warga RT 14 Sidorejo',
+  title: 'Manajemen Organisasi Hierarki',
+  description: 'Sistem Manajemen Organisasi Hierarki dengan Kontrol Akses Berbasis Peran',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'RT 14',
+    title: 'Org Management',
   },
 }
 
@@ -34,15 +33,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
-      <html lang="id" className={plusJakarta.variable}>
-        <head>
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-          <meta name="mobile-web-app-capable" content="yes" />
-        </head>
-        <body className={plusJakarta.className}>{children}</body>
-      </html>
-    </ClerkProvider>
+    <html lang="id" className={plusJakarta.variable}>
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
+      </head>
+      <body className={plusJakarta.className}>{children}</body>
+    </html>
   )
 }
